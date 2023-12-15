@@ -1,0 +1,178 @@
+/* General styling */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Menu styling */
+.menu-container {
+    width: 1152px;
+    max-width: 90%;
+    margin: 0 auto;
+}
+
+.nav-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #34c96e; /* Nature-inspired green background color */
+    padding: 10px; /* Updated padding for a slimmer navbar */
+    position: relative; /* Add relative positioning for shadow */
+}
+
+/* Add the following styles for the shadow effect */
+.nav-wrapper::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 10px; /* Adjust the height of the shadow as needed */
+    background: rgba(255, 255, 255, 0.5); /* Use a light color with transparency for a lighter shadow */
+    bottom: -10px; /* Adjust the distance of the shadow from the navbar */
+    left: 0;
+    z-index: -1; /* Place the shadow behind the navbar */
+}
+
+.nav-wrapper ul.nav-list {
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.nav-wrapper ul.nav-list li {
+    margin-left: 30px;
+    padding: 20px 0;
+    position: relative;
+}
+
+.nav-wrapper ul.nav-list li a {
+    color: #fff; /* White text color */
+    text-decoration: none;
+    letter-spacing: 1px;
+    transition: all 0.5s ease-in-out;
+}
+
+.nav-wrapper ul.nav-list li a:hover,
+.nav-wrapper ul.nav-list li.active a {
+    color: #3d3d3d; /* Dark gray hover color */
+}
+
+nav ul.dropdown-list {
+    list-style-type: none;
+    display: block;
+    background: #34c96e; /* Nature-inspired green background color for the submenu */
+    border-radius: 5px; /* Rounded corners for a stylish look */
+    box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.5); /* Add a subtle shadow with a lighter color */
+    padding: 6px 16px;
+    position: absolute;
+    width: max-content;
+    z-index: 9999;
+    left: 50%;
+    top: 100%; /* Position the submenu below the parent item */
+    transform: translateX(-50%);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.nav-wrapper ul.dropdown-list li {
+    margin-left: 0;
+    padding: 5px 0;
+}
+
+.nav-wrapper ul.dropdown-list li a {
+    color: #fff; /* White text color */
+    transition: color 0.5s ease-in-out;
+}
+
+.nav-wrapper ul.dropdown-list li a:hover {
+    color: #3d3d3d; /* Dark gray hover color */
+}
+
+.nav-wrapper ul.nav-list li:hover .dropdown-list {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* Button "Get Start" Settings */
+.nav-wrapper .nav-list li .btn {
+    background-color: #3d3d3d; /* Dark gray button background color */
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.5s ease-in-out;
+}
+
+.nav-wrapper .nav-list li .btn a {
+    color: #fff; /* White text color for the button */
+    text-decoration: none;
+}
+
+.nav-wrapper .nav-list li .btn:hover {
+    background-color: #007bff; /* Nature-inspired blue on hover */
+}
+
+.nav-wrapper .nav-list li .btn:hover a {
+    color: #fff; /* White text color on hover */
+}
+
+/* ... (rest of the code remains unchanged) */
+
+
+/* Responsive design adjustments */
+
+/* General style adjustments for responsiveness */
+body, .menu-container {
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Adjusting navigation for mobile view */
+.nav-wrapper {
+    flex-wrap: wrap;
+}
+
+/* Hiding large menu and showing hamburger icon in mobile view */
+.hamberger {
+    display: none;
+}
+
+/* Small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    .hamberger {
+        display: block;
+    }
+    .nav-list {
+        display: none;
+        width: 100%;
+    }
+    .nav-wrapper {
+        flex-direction: column;
+    }
+    /* Adjusting menu items for mobile */
+    .nav-item {
+        display: block;
+        width: 100%;
+        text-align: center;
+    }
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+    /* Adjustments for tablets can be added here */
+}
+
+/* Large devices (desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+    /* Adjustments for desktops can be added here */
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+    /* Adjustments for large desktops can be added here */
+}
